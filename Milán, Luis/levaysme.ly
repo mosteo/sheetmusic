@@ -1,5 +1,7 @@
 \version "2.18.2"
 
+%\include "../merge-rests-morley.ily"
+
 #(set-default-paper-size "a4")
 #(set-global-staff-size 20)
 % See http://lilypond.org/doc/v2.19/Documentation/notation/setting-the-staff-size
@@ -16,7 +18,7 @@
   title = \markup \abs-fontsize #18 \smallCaps "Levaysme amor d'aquesta terra"
   composer = \markup \abs-fontsize #12 "Luis Milán (c. 1500 -- c. 1561)"
   subsubtitle = "Del libro de Vihuela de mano, 1535"
-  tagline = "✣ A. Mosteo ~ Abr 2017 ✣"
+  tagline = \markup \tiny "✣ A. Mosteo ~ Abril 2017 ✣"
 }
 
 global = {
@@ -25,7 +27,7 @@ global = {
   \tempo "Moderato"
 }
 
-voice = \relative c'' {
+voice = \relative c'' {  
   \partial 2 
   \autoBeamOff
   a2 a4 a b2 cis e cis a b4 a b2 cis % Levaysme...
@@ -37,6 +39,41 @@ voice = \relative c'' {
   r2 a a4 a b2 cis e cis a b4 a b2 cis2 % Quel corpo
   r4 a cis2 a4 a b2 gis a fis gis4 fis gis2 fis2. r4 % que non fare
   \bar"|." 
+}
+
+rh = \relative c' { 
+  \partial 2
+  % 1st verse
+  <cis e>2\p | <cis fis>4 q <d gis>2 | <e a> <e b'> | <e a> <fis a> | 
+  <d fis>4 <cis fis> <d gis>2 | <cis e a>
+  
+  % 2nd verse
+  r4 <a d fis> | <a cis e>2 <a d fis>4 q | <b d b'>2 <eis gis b>4 <cis eis gis> | <a cis fis>2 <d fis> |
+  << { gis4 fis~ fis eis } \\ { d4 } >> <cis fis>2. r4 |
+  
+  % 3rd
+  << { a'1~ a2 a4 g fis2. fis4 } \\ 
+     { e2\p d4 cis d2 e~ e2 d4 cis } >> 
+  <b e>2^~ e |
+  
+  % 4th
+  << { a2 gis4 fis gis fis eis e } \\ 
+     { cis2 b b cis } >>
+  <e g>4 <d fis>2 <cis fis>4 <b e>2 <cis e> |
+  
+  % 5th
+  r2 <cis e>\p <cis fis>4 q <d fis>2 | <e a> <e b'> <e a> <fis a> | <d fis>4 <cis fis> <d gis>2 | <cis e a>
+  
+  % 6th
+  r4 <cis fis> |
+  << { gis'2 fis   | fis e     | e d     | d4 fis~ fis eis  | fis2. } \\
+     { cis2 d4 cis | b2 cis4 b | a2 b4 a | b2 cis           | cis2.  } >> r4
+  
+}
+
+lh = \relative c' {
+  \partial 2
+  r2 R1*29
 }
 
 text = \lyricmode {
@@ -52,23 +89,21 @@ text = \lyricmode {
 
 \score {
   <<    
-    \new Staff <<
-      \new Voice = "voice" {
-        \global 
-        \voice
-      }
+    \new Staff \with { midiInstrument = #"voice oohs" }
+    <<
+      \new Voice = "voice" { \global \voice }
       \addlyrics { \text }
     >>
     
     \new PianoStaff <<
-      \new Voice = "rh" {       
-      }
-      \new Voice = "lh" { 
-      }
+      \new Voice = "rh" { \global \clef G    \rh }
+      \new Voice = "lh" { \global \clef bass \lh }
     >>
   >>
   
-  %\midi { }
+  \midi { 
+    \tempo 4 = 140
+  }
   
   \layout {
       \context { 
