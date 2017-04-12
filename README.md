@@ -4,4 +4,4 @@ This repository contains my transcriptions of music I have needed at some point.
 
 I tend to use Lilypond for final scores that I want to look beautiful, and Musescore when I need faster experimentation and feedback (mostly when doing keyboard reductions). Not that Musescore can't produce beautiful results too with minimal pain.
 
-Enjoy! Visit the repository to access the sources or PDFs.
+Enjoy! Visit the repository (above button) to access the sources or PDFs.
