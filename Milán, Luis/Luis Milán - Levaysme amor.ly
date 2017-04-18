@@ -2,8 +2,9 @@
 
 \include "../definitions.ily"
 
+#(ly:set-option 'midi-extension "mid")
 #(set-default-paper-size "a4")
-#(set-global-staff-size 17.82)
+#(set-global-staff-size 20)
 % See http://lilypond.org/doc/v2.19/Documentation/notation/setting-the-staff-size
 % feta11		11.22	3.9	pocket scores
 % feta13		12.60	4.4	
@@ -18,7 +19,7 @@
   title       = \markup \override #'(font-name . "Baskerville") \abs-fontsize #18 \smallCaps "Levaysme amor d'aquesta terra"
   composer    = \markup \override #'(font-name . "Baskerville") \abs-fontsize #12 "Luis Milán (c. 1500 -- c. 1561)"
   subsubtitle = \markup \override #'(font-name . "Baskerville") "Del libro de Vihuela de mano, 1535"
-  tagline     = \markup \override #'(font-name . "Baskerville") \tiny "✣ A. Mosteo ~ Abril 2017 ✣"
+  tagline     = \markup \override #'(font-name . "Baskerville") \tiny "✣ A. Mosteo ~ 2ª ed. abril 2017 ✣"
 }
 
 global = {
@@ -120,7 +121,13 @@ text = \lyricmode {
       \new Voice { \global \voice }
       \addlyrics { \text }
     >>    
-    \new PianoStaff <<
+    \new PianoStaff 
+    \with {
+      fontSize = -2
+      \override StaffSymbol.staff-space = #(magstep -2)
+      \override StaffSymbol.thickness   = #(magstep -2)
+    }
+    <<      
       \new Voice { \global \clef G    \rh }
       \new Dynamics { \dynamics }
       \new Staff = "lh" <<
@@ -157,7 +164,7 @@ text = \lyricmode {
        (minimum-distance . 10)
        (padding . 1))
     
-  system-count = 5
+  %system-count = 5
   
   top-margin   = 1\cm
   left-margin  = 2.9\cm
