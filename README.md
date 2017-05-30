@@ -6,6 +6,6 @@ Enjoy! Visit the repository (above button) to access the sources or PDFs.
 
 ### Overview of Contents
 
-- Ave Maria (F. Schubert): A minimalistic reduction in both the original key and one tone down for Contralto, for accompaniment with organ. Arpeggios have been removed in favor of sustained chords, which removes some of its majestuosity but enables a more intimate and less rigid interpretation by the singer.
+- **Ave Maria (F. Schubert):** A minimalistic reduction in both the original key and one tone down for Contralto, for accompaniment with organ. Arpeggios have been removed in favor of sustained chords, which removes some of its majestuosity but enables a more intimate and less rigid interpretation by the singer.
 
-- Levaysme amor (L. Milán): A delightful little romantic piece from his "Libro de música de vihuela de mano".
+- **Levaysme amor (L. Milán):** A delightful little romantic piece from his "Libro de música de vihuela de mano".
