@@ -5,3 +5,9 @@ This repository contains my transcriptions of music I have needed at some point.
 I tend to use Lilypond for final scores that I want to look beautiful, and Musescore when I need faster experimentation and feedback (mostly when doing keyboard reductions). Not that Musescore can't produce beautiful results too with minimal pain.
 
 Enjoy! Visit the repository (above button) to access the sources or PDFs.
+
+# Overview of Contents
+
+- Ave Maria (F. Schubert): A minimalistic reduction in both the original key and one tone down for Contralto, for accompaniment with organ. Arpeggios have been removed in favor of sustained chords, which removes some of its majestuosity but enables a more intimate and less rigid interpretation by the singer.
+
+- Levaysme amor (L. Milán): A delightful little romantic piece from his "Libro de música de vihuela de mano".
