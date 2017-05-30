@@ -1,4 +1,4 @@
-## Public domain free music scores
+## My engravings of music in the public domain
 
 This repository contains my transcriptions of music I have needed at some point. Thanks to the [Lilypond](http://lilypond.org/) and [Musescore](https://musescore.org/) projects, any enthusiast can nowadays create, for free, beautiful scores that can be shared and tweaked by future users. Heartfelt thanks to the contributors of these and [Frescobaldi](http://frescobaldi.org/) projects.
 
