@@ -35,12 +35,12 @@ rhvI=\relative c'' {
   \repeat volta 2 {
     bes4. a16 bes d4.. c16 |
     bes4 r c bes16 a g a |
-    bes4 r8 d d8. c32 bes a16 g d' e d4 cis8. r16 c8. bes16 \tuplet 3/2 { a c d } \tuplet 3/2 { es c a }
-    bes4. d16 c c8. a16 \tuplet 3/2 { g b d f d b } c4~ \tuplet 3/2 { c16 g a } \tuplet 3/2 { bes a16 g }
+    bes4 r8 d d8. c32 bes a16 g d' e d4 cis8. r16 c8. bes16 \tuplet 6/4 { a c d es c a }
+    bes4. d16 c c8. a16 \tuplet 6/4 { g b d f d b } c4~ \tuplet 6/4 { c16 g a bes a16 g }
     f4 \teeny es \normalsize c'4 c16. b32 c16. d32 c16. d32 bes8 r4 |
-    c4 \tuplet 3/2 { c16 b c } \tuplet 3/2 { es d c } bes4 r |
+    c4 \tuplet 6/4 { c16 b c es d c } bes4 r |
     c4 d4 f8 es r4 |
-    d8 c \tuplet 3/2 { bes16 a bes } \tuplet 3/2 { des c bes } c4. r8
+    d8 c \tuplet 6/4 { bes16 a bes des c bes } c4. r8
   }
 }
 
@@ -55,7 +55,7 @@ rhvII=\relative c' {
   <a' f'> <e g> 
   <a, c>2
   es'4 es16. d32 es16. f32 es16. f32 d8 d4
-  es4 \tuplet 3/2 { es16 d es g f es } d4 d
+  es4 \tuplet 6/4 { es16 d es g f es } d4 d
   <f a>4 <fis a> <g c> <es g>
   <es g>4 e <f a> <es a>
 }
