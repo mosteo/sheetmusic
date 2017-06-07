@@ -26,6 +26,8 @@ global = {
     tagline = "✣ @dreamgraver May 2017 ✣"
 }
 
+arranger="Arranger: A.R. Mosteo upon improvisations of C. Betrán"
+
 %%%%%%%%%%%%%%%%%%%%%%% MUSIC %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 rhvI=\relative c'' {  
@@ -42,22 +44,26 @@ rhvI=\relative c'' {
     c4 d4 f8 es r4 |
     d8 c \tuplet 6/4 { bes16 a bes des c bes } c4. r8
   }
+  
+  bes4. a16 bes d4.. c16 | <d, f bes>1\fermata \bar"|." 
 }
 
 rhvII=\relative c' {
-  <d f>4 <e g> <f bes> <es a>
+  <d f>4 <d e> <f bes> <es a>
   
-  <d f>4 <e g> <f bes> <es a>
+  <d f>4 <d e> <f bes> <es a>
   <d g>2 <es g>4 <es f>
   <d f>2 <d fis>4 <d \parenthesize g>4
   <e g>2 <d a'>2
-  <d g> f4 <d g>
+  <d g>4 <e g> f4 <d g>
   <a' f'> <e g> 
   <a, c>2
   es'4 es16. d32 es16. f32 es16. f32 d8 d4
   es4 \tuplet 6/4 { es16 d es g f es } d4 d
   <f a>4 <fis a> <g c> <es g>
   <es g>4 e <f a> <es a>
+  
+  <d f>4 <d e> <f bes> <es a>
 }
 
 lh=\relative c {
@@ -72,6 +78,8 @@ lh=\relative c {
   q q <g g'> q
   <f f'> <d d'> <c c'> q
   <es es'> <g g'> <f f'> q
+  
+  <bes bes'>4 <g g'> <f f'> q | <bes bes'>1\fermata
 }
 
 %%%%%%%%%%%%%%%%%%%%%%% SCORE %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,7 +90,7 @@ lh=\relative c {
   title = "Ave Maria"
   subtitle="A♭ major"
   composer = "Franz Schubert"
-  arranger = "Arranger: Alejandro R. Mosteo"
+  arranger = \arranger
 }
 
   \score
@@ -139,9 +147,9 @@ lh=\relative c {
   
   \header {
   title = "Ave Maria"
-  subtitle="B♭ major"
+  subtitle="B♭ major (original key)"
   composer = "Franz Schubert"
-  arranger = "Arranger: Alejandro R. Mosteo"
+  arranger = \arranger
 }
 
 \score
