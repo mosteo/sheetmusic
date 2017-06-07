@@ -23,7 +23,7 @@ global = {
 }
 
 \header {
-    tagline = "✣ @dreamgraver May 2017 ✣"
+    tagline = "✣ @dreamgravings Jun 2017 ✣"
 }
 
 arranger="Arranger: A.R. Mosteo upon improvisations of C. Betrán"
