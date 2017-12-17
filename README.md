@@ -12,4 +12,4 @@ Enjoy! Visit the repository (above button) to access the sources and PDFs.
 
 - **Levaysme amor (L. Milán):** A delightful little romantic piece from his "Libro de música de vihuela de mano".
 
-- **Noche de paz (A. Viñuales):** The popular Xmas song, as arranged by the late Antonio Viñuales".
+- **Noche de paz (A. Viñuales):** The popular Xmas song, as arranged by the late Antonio Viñuales.
