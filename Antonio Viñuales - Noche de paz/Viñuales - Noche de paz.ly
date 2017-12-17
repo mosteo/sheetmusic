@@ -16,60 +16,112 @@
 % feta26		25.2	8.9
 
 \header {
-  title       = \markup \override #'(font-name . "Baskerville") \abs-fontsize #18 \smallCaps "Noche de paz"
-  composer    = \markup \override #'(font-name . "Baskerville") \abs-fontsize #12 "Franz Xaver Gruber (1787-1863)"
-  arranger = \markup \override #'(font-name . "Baskerville") "Arreglo de Antonio Viñuales (1955-2017)"
-  poet = \markup \override #'(font-name . "Baskerville") "Letra: Joseph Mohr y Federico Fliedner (traducción)"
-  tagline     = \markup \override #'(font-name . "Baskerville") \tiny "✣ Coral Oscense 2017 ✣"
-  maintainer = \markup \override #'(font-name . "Baskerville") \tiny "Alejandro R. Mosteo"
+  title      = \markup \abs-fontsize #18 \center-column 
+                  { \smallCaps "Noche de paz" " " }
+  composer   = \markup \right-column { "Franz Xaver Gruber (1787-1863)"  
+                                       "Arreglo: Antonio Viñuales (1955-2017)" }
+  poet = \markup \left-column { "Letra: Joseph Mohr" 
+                                "Traducción: Federico Fliedner" }
+  tagline     = \markup \tiny "✣ Coral Oscense 2017 ✣"
+  maintainer = \markup \tiny "Alejandro R. Mosteo"
 }
 
 global = {
   \time 3/4
   \key c \major
+  \autoBeamOff
   %\tempo "Moderato"
 }
 
-sopran = \relative c'' {  
-  \autoBeamOff
-  a2 a4 a b2 cis e cis a b4 a b2 cis % Levaysme...
-  r4 a cis2 a4 a b2 gis a fis gis4 fis gis2 fis2. r4 | % que non ...
-  
-  cis'2 b4 a b2 cis cis b4 a~ a gis a2 | % Levaysme al isla
-  cis2 b4 a b2 cis4 cis~ cis b b a a gis a2 |  % levaysme con vos .. vida
-  
-  r2 a a4 a b2 cis e cis a b4 a b2 cis2 % Quel corpo
-  r4 a cis2 a4 a b2 gis a fis gis4 fis gis2 fis2. r4 % que non fare
-  \bar"|." 
+sopran = \relative c'' {    
+    g4. a8 g4 | e2. | g4. a8 g4 | e2. | 
+    d'2 d4 | b2. | c2 c4 | g2 r4 | 
+    \repeat unfold 2 { a2 a4 | c4. b8 a4 | g4. a8 g4 | e2. }
+    d'2 d4 f4. d8 b4 |  c2.( e2.)
+    \mark \markup { \musicglyph #"scripts.ufermata" } \bar "||"
+    c4. g8 e4 | g4. f8 d4 | c2.~ c 
+    \bar ":|."
 }
 
-text = \lyricmode {
-  Le -- vays -- me a -- mor d'a -- ques -- ta ter -- _ _ ra
-  que non fa -- re mai vi -- da en e -- _ _ lla.
-  
-  Le -- vays -- me~a -- mor al is -- la per -- di -- da, 
-  le -- vays -- me con __ _ vos pos soys min -- ya vi -- da.
-  
-  Quel cor -- po sin al -- ma non vi -- ve~en la ter -- ra
-  que non fa -- re mai vi -- da en e -- _ _ lla.
+alto = \relative c' {
+    \repeat unfold 2 { e4. f8 e4 | c( d c) }
+    d4.( e8) f4 | g4.( fis8 f4) | e4.( f8) e4 | e2. | 
+    f2 f4 | a4. g8 f4 | e4. f8 e4 | c( b bes) | 
+    a4.( c8) f4 | a4. g8 f4 | e4. f8 e4 | c( d c) | 
+    d2 d4 | b'4. b8 b4 | a2.( fis) |
+    e4. e8 c4 | cis4. d8 b4 | c2.~ | c
+}
+
+tenor = \relative c' {
+    \repeat unfold 2 { c4. c8 c4 g2. } |
+    g2 g4 | g2. | g2 g4 | c2. | 
+    c4. d8 c4 | c4. c8 c4 | c4. c8 c4 | g2. | 
+    f2 c'4 | c4. d8 dis4 | e4. b8 c4 | g2. | 
+    b2 b4 | b4. d8 f4 | e2.( c2.) | 
+    g4. g8 g4 | a4. a8 g[ f] | f4.( e8 f4 | e2.)
+}
+
+bass = \relative c {
+    \repeat unfold 2 { c4. c8 c4 c2. } |
+    b4.( c8) b[ a] | g2. | c2 c4 | << c2. { g'2 gis4 }  >> |
+    << { f,2 f4 f4. f8 f4 } { a'4. b8 a4 f4. f8 f4 } >>
+    c4. c8 c4 c2.
+    << { f,2 f4 f4. f8 f4 } { f'2 f4 f4. f8 f4 } >>
+    c4. c8 c4 | c( b a) | <g g'>2 q4 | <gis gis'>4. q8 q4
+    <a a'>2.( q) |
+    c4. c8 c4 | a4. d8 g,4 | c2.~ | c 
+}
+
+textI = \lyricmode {
+    No -- che de Dios, no -- che de paz,
+    cla -- ro sol bri -- lla ya
+    y los án -- ge -- les 
+    can -- tan -- do~es -- tán.
+    Glo -- ria~a Dios, glo -- ria~al Rey E -- ter --nal.
+    Duer -- me~el ni -- ño Je -- sús.
+    Duer -- me el ni -- ño Je -- sús.
+}
+
+textII = \lyricmode {
+    Stil __ _ -- le Nacht, Hei -- li -- ge Nacht,
+    Al -- les schläft, ein -- sam wacht
+    Nur das trau __ _ -- te hei -- li -- ge Paar.
+    Hol -- der Knab' __ _ im loc -- kig -- ten Haar,
+    Schla -- fe~in himm -- li -- scher Ruh.
+    Schla -- fe in himm -- li -- scher Ruh.
+}
+
+textIII = \lyricmode {
+    No -- che de paz, no -- che de Dios,
+    al por -- tal va~el pas -- tor
+    y~en -- tre pa -- jas en -- cuen -- tra~al Se -- ñor,
+    es el Ver -- bo que car -- ne to -- mó.    
+    Duer -- me~el ni -- ño Je -- sús.
+    Duer -- me el ni -- ño Je -- sús.
 }
 
 \score {
     \new ChoirStaff <<
       \new Staff \with {
-        midiInstrument = "choir aahs"
-        instrumentName = \markup \center-column { S A }
+        midiInstrument = "voice oohs"
+        instrumentName = \markup \right-column { S A }
       } <<
-        \new Voice = "sopran" { \voiceOne \sopran }
-        %\addlyrics { \text }
-        \new Voice = "alto" { \voiceTwo \sopran }
+        \global
+        \new Voice = "sopran" { \voiceOne \sopran }        
+        \new Voice = "alto" { \voiceTwo \alto }
+        \addlyrics { \set stanza = #"1." \textI }
+        \addlyrics { \set stanza = #"2." \override LyricText #'font-shape = #'italic 
+                                          \textII }
+        \addlyrics { \set stanza = #"3." \textIII }
       >>
       \new Staff \with {
         midiInstrument = "voice oohs"
-        instrumentName = \markup \center-column { T B }
+        instrumentName = \markup \right-column { T B }
       } <<
-        \new Voice = "tenor" { \voiceOne \sopran }
-        \new Voice = "bass" { \voiceTwo \sopran }
+        \global
+        \clef bass
+        \new Voice = "tenor" { \voiceOne \tenor }
+        \new Voice = "bass" { \voiceTwo \bass }
       >>    
   >>
   
@@ -78,7 +130,7 @@ text = \lyricmode {
   }
   
   \layout {
-      \context { \Score \override LyricText #'font-name = "Baskerville" }
+      %\context { \Score \override LyricText #'font-name = "Baskerville" }
       %\context { \Score \override TextScript #'font-size = #5 }
   }
 }
@@ -94,16 +146,19 @@ text = \lyricmode {
   %                        "Luxi Mono"
   %                        (/ staff-height pt 20))) % Font scaling
   
-  ragged-last-bottom = ##t
+  %ragged-last-bottom = ##t
   
   last-bottom-spacing = 
     #'((basic-distance . 10)
        (minimum-distance . 10)
        (padding . 1))
     
+  markup-system-spacing #'minimum-distance = #20
+    
+  %annotate-spacing = ##t
   %system-count = 5
-  
+    
   top-margin   = 1\cm
-  left-margin  = 2.9\cm
-  right-margin = 2.9\cm
+  left-margin  = 2\cm
+  right-margin = 2\cm
 }
