@@ -22,7 +22,7 @@
                                        "Arreglo: Antonio Viñuales (1955-2017)" }
   poet = \markup \left-column { "Letra: Joseph Mohr" 
                                 "Traducción: Federico Fliedner" }
-  tagline     = \markup \tiny "✣ Coral Oscense 2017 ✣"
+  tagline     = \markup \tiny "✣ Coral Oscense 2017 v2 ✣"
   maintainer = \markup \tiny "Alejandro R. Mosteo"
 }
 
@@ -77,7 +77,7 @@ textI = \lyricmode {
     cla -- ro sol bri -- lla ya
     y los án -- ge -- les 
     can -- tan -- do~es -- tán.
-    Glo -- ria~a Dios, glo -- ria~al Rey E -- ter --nal.
+    Glo -- ria~a Dios, glo -- ria~al Rey E -- ter -- nal.
     Duer -- me~el ni -- ño Je -- sús.
     Duer -- me el ni -- ño Je -- sús.
 }
@@ -131,7 +131,7 @@ textIII = \lyricmode {
   
   \layout {
       %\context { \Score \override LyricText #'font-name = "Baskerville" }
-      %\context { \Score \override TextScript #'font-size = #5 }
+      %\context { \Score \override LyricText #'font-size = #2 }      
   }
 }
 
@@ -140,8 +140,10 @@ textIII = \lyricmode {
   % This would be ideal but breaks things when the chosen font doesn't support e.g. italics
   % So I override manually where necessary
   % Let's hope 2.19 arrives soon and gets rid of these things
+  
+  % Check available with $ lilypond -dshow-available-fonts x
   % #(define fonts
-  %  (make-pango-font-tree "Baskerville"
+  %  (make-pango-font-tree "Baskervald ADF Std"
   %                        "Nimbus Sans"
   %                        "Luxi Mono"
   %                        (/ staff-height pt 20))) % Font scaling
@@ -154,6 +156,7 @@ textIII = \lyricmode {
        (padding . 1))
     
   markup-system-spacing #'minimum-distance = #20
+  system-system-spacing #'minimum-distance = #17
     
   %annotate-spacing = ##t
   %system-count = 5
